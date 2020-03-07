@@ -29,5 +29,17 @@ namespace Soat.CleanCoders.DipKata.Tests
 
             MailBuffer.Should().Be(expected);
         }
+
+        [Fact]
+        public void SendMessage_From_PrivateAddress_When_Called()
+        {
+            var sender = new EmailSender();
+            var message = "myWonderfulMessage";
+            var expected = $"To:, Subject: Happy birthday!, Message: {message}";
+
+            sender.Send(message);
+
+            MailBuffer.Should().Be(expected);
+        }
     }
 }
