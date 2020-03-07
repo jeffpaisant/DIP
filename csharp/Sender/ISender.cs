@@ -1,4 +1,4 @@
-﻿namespace Soat.CleanCoders.DipKata.Main
+﻿namespace Soat.CleanCoders.DipKata.Sender
 {
     public interface ISender
     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Soat.CleanCoders.DipKata.Sender;
+using System;
 using System.Linq;
 
 namespace Soat.CleanCoders.DipKata.Main

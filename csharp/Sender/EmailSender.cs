@@ -1,6 +1,7 @@
-﻿using System;
+using Soat.CleanCoders.DipKata.Main;
+using System;
 
-namespace Soat.CleanCoders.DipKata.Main
+namespace Soat.CleanCoders.DipKata.Sender
 {
     public class EmailSender : ISender
     {
