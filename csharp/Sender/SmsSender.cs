@@ -5,9 +5,9 @@ namespace Soat.CleanCoders.DipKata.Sender
 {
     public class SmsSender : ISender
     {
-        public void Send(string message)
+        public void Send(string friendName)
         {
-            Console.Write($"Happy birthday!, Message: {message}");
+            Console.Write($"Happy birthday, my dear {friendName}!");
         }
     }
 }
