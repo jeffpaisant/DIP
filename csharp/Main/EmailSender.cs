@@ -4,7 +4,7 @@ namespace Soat.CleanCoders.DipKata.Main
 {
     public class EmailSender
     {
-        public void send(string emailAddress, string message)
+        public void Send(string emailAddress, string message)
         {
             Console.Write($"To:{emailAddress}, Subject: Happy birthday!, Message: {message}");
         }

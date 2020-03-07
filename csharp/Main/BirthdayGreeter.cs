@@ -20,12 +20,12 @@ namespace Soat.CleanCoders.DipKata.Main
                              .ToList()
                              .ForEach(friend =>
                              {
-                                 var message = mailMessageFor(friend);
-                                 emailSender.send(friend.Email, message);
+                                 var message = MailMessageFor(friend);
+                                 emailSender.Send(friend.Email, message);
                              });
         }
 
-        private string mailMessageFor(Friend friend) =>
+        private string MailMessageFor(Friend friend) =>
             $"Happy birthday, dear {friend.FirstName}!";
     }
 }
