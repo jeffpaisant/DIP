@@ -31,7 +31,7 @@ namespace Soat.CleanCoders.DipKata.Tests
         }
 
         [Fact]
-        public void SendMessage_From_PrivateAddress_When_Called()
+        public void SendMessage_From_EmptyAddress_When_Called_Without_Address()
         {
             var sender = new EmailSender();
             var message = "myWonderfulMessage";
