@@ -1,7 +1,6 @@
 ﻿using Soat.CleanCoders.DipKata.Repository;
 using Soat.CleanCoders.DipKata.Sender;
 using System;
-using System.Linq;
 
 namespace Soat.CleanCoders.DipKata.Main
 {
@@ -19,13 +18,13 @@ namespace Soat.CleanCoders.DipKata.Main
         public void SendGreetings()
         {
             var today = DateTime.Now;
-            _friendRepository.FindFriendsBornOn(today)
-                             .ToList()
-                             .ForEach(friend =>
-                             {
-                                 var message = MailMessageFor(friend);
-                                 _sender.Send(friend, message);
-                             });
+            var friends = _friendRepository.FindFriendsBornOn(today);
+
+            foreach (var friend in friends)
+            {
+                var message = MailMessageFor(friend);
+                _sender.Send(friend, message);
+            }
         }
 
         private string MailMessageFor(Friend friend) =>
