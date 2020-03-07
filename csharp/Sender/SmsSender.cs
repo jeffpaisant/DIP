@@ -7,7 +7,7 @@ namespace Soat.CleanCoders.DipKata.Sender
     {
         public void Send(string message)
         {
-            throw new NotImplementedException();
+            Console.Write($"Happy birthday!, Message: {message}");
         }
     }
 }
