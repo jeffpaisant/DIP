@@ -13,7 +13,8 @@ namespace Soat.CleanCoders.DipKata.Tests
 {
     public class BirthdayGreeterShould
     {
-        private readonly BirthdayGreeter _birthdayGreeter;
+        private readonly BirthdayGreeter _birthdayMailGreeter;
+        private readonly BirthdayGreeter _birthdaySMSGreeter;
         private readonly TextWriter _consoleOutput;
         private readonly Mock<IFriendRepository> _friendRepositoryMock;
 
@@ -22,7 +23,8 @@ namespace Soat.CleanCoders.DipKata.Tests
         public BirthdayGreeterShould()
         {
             _friendRepositoryMock = new Mock<IFriendRepository>();
-            _birthdayGreeter = new BirthdayGreeter(_friendRepositoryMock.Object, new EmailSender());
+            _birthdayMailGreeter = new BirthdayGreeter(_friendRepositoryMock.Object, new EmailSender());
+            _birthdaySMSGreeter = new BirthdayGreeter(_friendRepositoryMock.Object, new SmsSender());
             _consoleOutput = new StringWriter();
             Console.SetOut(_consoleOutput);
         }
@@ -38,7 +40,7 @@ namespace Soat.CleanCoders.DipKata.Tests
                 .Returns(new[] { friend });
 
             // Act
-            _birthdayGreeter.SendGreetings();
+            _birthdayMailGreeter.SendGreetings();
 
             // Assert
             var expectedMailContent =
@@ -55,7 +57,38 @@ namespace Soat.CleanCoders.DipKata.Tests
                 .Setup(x => x.FindFriendsBornOn(It.IsAny<DateTime>()))
                 .Returns(Enumerable.Empty<Friend>());
 
-            _birthdayGreeter.SendGreetings();
+            _birthdayMailGreeter.SendGreetings();
+
+            MailBuffer.Should().BeNullOrEmpty();
+        }
+
+        [Fact]
+        public void Send_greeting_SMS_to_the_friend_born_today()
+        {
+            // Arrange
+            var friend = AFriend().Build();
+
+            _friendRepositoryMock
+                .Setup(x => x.FindFriendsBornOn(It.IsAny<DateTime>()))
+                .Returns(new[] { friend });
+
+            // Act
+            _birthdaySMSGreeter.SendGreetings();
+
+            // Assert
+            var expectedMailContent = $"SMS: Happy birthday, dear {friend.FirstName}!";
+
+            MailBuffer.Should().Be(expectedMailContent);
+        }
+
+        [Fact]
+        public void Send_no_greeting_SMS_when_its_nobody_birthday()
+        {
+            _friendRepositoryMock
+                .Setup(x => x.FindFriendsBornOn(It.IsAny<DateTime>()))
+                .Returns(Enumerable.Empty<Friend>());
+
+            _birthdaySMSGreeter.SendGreetings();
 
             MailBuffer.Should().BeNullOrEmpty();
         }

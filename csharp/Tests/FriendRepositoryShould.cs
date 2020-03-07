@@ -45,5 +45,19 @@ namespace Soat.CleanCoders.DipKata.Tests
 
             friends.Should().NotBeEmpty();
         }
+
+        /// <summary>
+        /// Integration Test
+        /// </summary>
+        [Fact]
+        public void Return_Empty_Friends_When_Friends_NotFound()
+        {
+            var now = DateTime.Now;
+            var repository = new FriendRepository();
+
+            var friends = repository.FindFriendsBornOn(now);
+
+            friends.Should().BeEmpty();
+        }
     }
 }
