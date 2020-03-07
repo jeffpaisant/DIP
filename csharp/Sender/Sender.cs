@@ -1,15 +1,9 @@
 ﻿using Soat.CleanCoders.DipKata.Main;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Soat.CleanCoders.DipKata.Sender
 {
-    public abstract class Sender : ISender
+    public abstract class Sender
     {
-        public void Send(string message)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Send(Friend friend, string message);
     }
 }
