@@ -3,11 +3,11 @@ using System.IO;
 using System.Linq;
 using FluentAssertions;
 using Moq;
-using Soat.CleanCoders.DipKata.Repository;
 using Soat.CleanCoders.DipKata.Main;
 using Soat.CleanCoders.DipKata.Sender;
 using Xunit;
 using static Soat.CleanCoders.DipKata.Main.FriendBuilder;
+using Soat.CleanCoders.DipKata.Main.Interfaces;
 
 namespace Soat.CleanCoders.DipKata.Tests
 {

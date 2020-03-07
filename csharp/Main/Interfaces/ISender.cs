@@ -1,6 +1,6 @@
 ﻿using Soat.CleanCoders.DipKata.Main;
 
-namespace Soat.CleanCoders.DipKata.Sender
+namespace Soat.CleanCoders.DipKata.Main.Interfaces
 {
     public interface ISender
     {

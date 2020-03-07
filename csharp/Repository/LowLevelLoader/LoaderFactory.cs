@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Soat.CleanCoders.DipKata.Repository
+namespace Soat.CleanCoders.DipKata.Repository.LowLevelLoader
 {
     public class LoaderFactory
     {

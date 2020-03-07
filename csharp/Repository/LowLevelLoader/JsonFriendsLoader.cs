@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Soat.CleanCoders.DipKata.Repository
+namespace Soat.CleanCoders.DipKata.Repository.LowLevelLoader
 {
     public class JsonFriendsLoader : ILoader
     {

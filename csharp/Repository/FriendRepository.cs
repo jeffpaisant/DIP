@@ -1,4 +1,6 @@
 ﻿using Soat.CleanCoders.DipKata.Main;
+using Soat.CleanCoders.DipKata.Main.Interfaces;
+using Soat.CleanCoders.DipKata.Repository.LowLevelLoader;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,7 @@ namespace Soat.CleanCoders.DipKata.Repository
     {
         private ILoader _loader;
         private IEnumerable<Friend> _friends;
-        private string ExistingRepository() => "D:\\Repository\\DIP\\csharp\\Repository\\PhysicalRepository.json";
+        private string ExistingRepository() => "D:\\Repository\\DIP\\csharp\\Repository\\Physical\\PhysicalRepository.json";
 
         public FriendRepository()
         {
