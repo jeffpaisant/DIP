@@ -18,7 +18,7 @@ namespace Soat.CleanCoders.DipKata.Repository
         public IEnumerable<Friend> FindFriendsBornOn(DateTime dayOfBirth)
         {
             _friends = GetFriends();
-            return _friends.Where(f => f.DateOfBirth == dayOfBirth);
+            return _friends.Where(f => f.DateOfBirth.ToString() == dayOfBirth.ToString());
         }
 
         private IEnumerable<Friend> GetFriends()
