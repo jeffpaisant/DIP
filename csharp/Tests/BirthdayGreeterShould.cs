@@ -7,7 +7,7 @@ using Soat.CleanCoders.DipKata.Main;
 using Soat.CleanCoders.DipKata.Sender;
 using Xunit;
 using static Soat.CleanCoders.DipKata.Main.FriendBuilder;
-using Soat.CleanCoders.DipKata.Interfaces;
+using Soat.CleanCoders.DipKata.Main.Interfaces;
 
 namespace Soat.CleanCoders.DipKata.Tests
 {

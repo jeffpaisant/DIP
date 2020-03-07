@@ -1,5 +1,5 @@
-﻿using Soat.CleanCoders.DipKata.Interfaces;
-using Soat.CleanCoders.DipKata.Main;
+﻿using Soat.CleanCoders.DipKata.Main;
+using Soat.CleanCoders.DipKata.Main.Interfaces;
 using Soat.CleanCoders.DipKata.Repository.LowLevelLoader;
 using System;
 using System.Collections.Generic;

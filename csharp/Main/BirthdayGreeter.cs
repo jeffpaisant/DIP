@@ -1,4 +1,4 @@
-﻿using Soat.CleanCoders.DipKata.Interfaces;
+﻿using Soat.CleanCoders.DipKata.Main.Interfaces;
 using System;
 
 namespace Soat.CleanCoders.DipKata.Main
