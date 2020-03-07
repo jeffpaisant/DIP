@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Soat.CleanCoders.DipKata.Main;
 using Soat.CleanCoders.DipKata.Sender;
 using System;
 using System.IO;
@@ -28,6 +29,19 @@ namespace Soat.CleanCoders.DipKata.Tests
             var sender = new SmsSender();
 
             sender.Send(friend);
+
+            SmsBuffer.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Send_Sms_ToAFriend()
+        {
+            var friendBuilder = new FriendBuilder();
+            var friend = friendBuilder.WithFirstName("Joe").Build();
+            var sender = new SmsSender();
+            var expected = $"Happy birthday, my dear {friend.FirstName}!";
+
+            sender.Send(friend, "");
 
             SmsBuffer.Should().Be(expected);
         }
