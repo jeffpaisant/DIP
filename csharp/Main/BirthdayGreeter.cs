@@ -22,7 +22,7 @@ namespace Soat.CleanCoders.DipKata.Main
                              .ForEach(friend =>
                              {
                                  var message = MailMessageFor(friend);
-                                 emailSender.Send(friend.Email, message);
+                                 emailSender.Send(friend, message);
                              });
         }
 

@@ -12,23 +12,11 @@ namespace Soat.CleanCoders.DipKata.Tests
         private TextWriter _consoleOut;
 
         private string MailBuffer => _consoleOut.ToString();
+
         public EmailSenderShould()
         {
             _consoleOut = new StringWriter();
             Console.SetOut(_consoleOut);
-        }
-
-        [Fact]
-        public void SendMessage_When_Called()
-        {
-            var sender = new EmailSender();
-            var mail = "myEmail";
-            var message = "myWonderfulMessage";
-            var expected = $"To:{mail}, Subject: Happy birthday!, Message: {message}";
-
-            sender.Send(mail, message);
-
-            MailBuffer.Should().Be(expected);
         }
 
         [Fact]
@@ -39,6 +27,20 @@ namespace Soat.CleanCoders.DipKata.Tests
             var expected = $"To:, Subject: Happy birthday!, Message: {message}";
 
             sender.Send(message);
+
+            MailBuffer.Should().Be(expected);
+        }
+
+        [Fact]
+        public void SendMessage_to_Friend_Address()
+        {
+            var sender = new EmailSender();
+            var message = "myWonderfulMessage";
+            var friendBuilder = new FriendBuilder();
+            var friend = friendBuilder.WithEmail("JoeAdress").Build();
+            var expected = $"To:{friend.Email}, Subject: Happy birthday!, Message: {message}";
+
+            sender.Send(friend, message);
 
             MailBuffer.Should().Be(expected);
         }
