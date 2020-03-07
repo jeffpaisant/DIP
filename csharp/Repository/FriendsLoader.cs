@@ -1,8 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Soat.CleanCoders.DipKata.Repository;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Soat.CleanCoders.DipKata.FriendRepository
+namespace Soat.CleanCoders.DipKata.Repository
 {
     public class FriendsLoader : ILoader
     {

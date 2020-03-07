@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using Soat.CleanCoders.DipKata.FriendRepository;
+using Soat.CleanCoders.DipKata.Repository;
 using Xunit;
 
 namespace Soat.CleanCoders.DipKata.Tests

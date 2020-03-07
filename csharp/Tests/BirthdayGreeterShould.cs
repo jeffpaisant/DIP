@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using FluentAssertions;
 using Moq;
-using Soat.CleanCoders.DipKata.FriendRepository;
+using Soat.CleanCoders.DipKata.Repository;
 using Soat.CleanCoders.DipKata.Main;
 using Soat.CleanCoders.DipKata.Sender;
 using Xunit;

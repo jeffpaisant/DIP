@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Soat.CleanCoders.DipKata.FriendRepository
+﻿namespace Soat.CleanCoders.DipKata.Repository
 {
     public class StoredFriend
     {

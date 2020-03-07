@@ -1,4 +1,4 @@
-﻿using Soat.CleanCoders.DipKata.FriendRepository;
+﻿using Soat.CleanCoders.DipKata.Repository;
 using Soat.CleanCoders.DipKata.Sender;
 using System;
 using System.Linq;
