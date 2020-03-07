@@ -4,6 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using Moq;
 using Soat.CleanCoders.DipKata.Main;
+using Soat.CleanCoders.DipKata.Sender;
 using Xunit;
 using static Soat.CleanCoders.DipKata.Main.FriendBuilder;
 
@@ -11,8 +12,8 @@ namespace Soat.CleanCoders.DipKata.Tests
 {
     public class BirthdayGreeterShould
     {
-        private readonly BirthdayGreeter        _birthdayGreeter;
-        private readonly TextWriter             _consoleOutput;
+        private readonly BirthdayGreeter _birthdayGreeter;
+        private readonly TextWriter _consoleOutput;
         private readonly Mock<FriendRepository> _friendRepositoryMock;
 
         private string MailBuffer => _consoleOutput.ToString();
@@ -20,8 +21,8 @@ namespace Soat.CleanCoders.DipKata.Tests
         public BirthdayGreeterShould()
         {
             _friendRepositoryMock = new Mock<FriendRepository>();
-            _birthdayGreeter      = new BirthdayGreeter(_friendRepositoryMock.Object);
-            _consoleOutput        = new StringWriter();
+            _birthdayGreeter = new BirthdayGreeter(_friendRepositoryMock.Object, new EmailSender());
+            _consoleOutput = new StringWriter();
             Console.SetOut(_consoleOutput);
         }
 

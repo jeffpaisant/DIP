@@ -5,14 +5,14 @@ namespace Soat.CleanCoders.DipKata.Sender
 {
     public class SmsSender : ISender
     {
-        public void Send(string friendName)
+        private void SendSMS(string message)
         {
-            Console.Write($"Happy birthday, my dear {friendName}!");
+            Console.Write("SMS: " + message);
         }
 
         public void Send(Friend friend, string message)
         {
-            Send(friend.FirstName);
+            SendSMS(message);
         }
     }
 }

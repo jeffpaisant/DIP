@@ -20,18 +20,6 @@ namespace Soat.CleanCoders.DipKata.Tests
         }
 
         [Fact]
-        public void SendMessage_From_EmptyAddress_When_Called_Without_Address()
-        {
-            var sender = new EmailSender();
-            var message = "myWonderfulMessage";
-            var expected = $"To:, Subject: Happy birthday!, Message: {message}";
-
-            sender.Send(message);
-
-            MailBuffer.Should().Be(expected);
-        }
-
-        [Fact]
         public void SendMessage_to_Friend_Address()
         {
             var sender = new EmailSender();

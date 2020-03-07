@@ -19,29 +19,16 @@ namespace Soat.CleanCoders.DipKata.Tests
             Console.SetOut(_consoleOutput);
         }
 
-
-        [Fact]
-        public void Send_Sms_When_Called()
-        {
-            var friend = "Joe";
-            var expected = $"Happy birthday, my dear {friend}!";
-
-            var sender = new SmsSender();
-
-            sender.Send(friend);
-
-            SmsBuffer.Should().Be(expected);
-        }
-
         [Fact]
         public void Send_Sms_ToAFriend()
         {
             var friendBuilder = new FriendBuilder();
             var friend = friendBuilder.WithFirstName("Joe").Build();
             var sender = new SmsSender();
-            var expected = $"Happy birthday, my dear {friend.FirstName}!";
+            var expected = $"SMS: Happy birthday, my dear {friend.FirstName}!";
+            var message = $"Happy birthday, my dear {friend.FirstName}!";
 
-            sender.Send(friend, "");
+            sender.Send(friend, message);
 
             SmsBuffer.Should().Be(expected);
         }

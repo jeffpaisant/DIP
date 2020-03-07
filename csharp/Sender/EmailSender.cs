@@ -7,7 +7,7 @@ namespace Soat.CleanCoders.DipKata.Sender
     {
         private string _emailAddress;
 
-        public void Send(string message)
+        private void SendMail(string message)
         {
             Send(_emailAddress, message);
         }
@@ -20,7 +20,7 @@ namespace Soat.CleanCoders.DipKata.Sender
         public void Send(Friend friend, string message)
         {
             _emailAddress = friend.Email;
-            Send(message);
+            SendMail(message);
         }
     }
 }
