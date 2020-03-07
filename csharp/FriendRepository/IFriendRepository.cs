@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Soat.CleanCoders.DipKata.Main;
+using System;
 using System.Collections.Generic;
 
-namespace Soat.CleanCoders.DipKata.Main
+namespace Soat.CleanCoders.DipKata.FriendRepository
 {
     public interface IFriendRepository
     {
