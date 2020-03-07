@@ -6,10 +6,10 @@ namespace Soat.CleanCoders.DipKata.Main
 {
     public class BirthdayGreeter
     {
-        private readonly FriendRepository _friendRepository;
+        private readonly IFriendRepository _friendRepository;
         private ISender _sender;
 
-        public BirthdayGreeter(FriendRepository friendRepository, ISender sender)
+        public BirthdayGreeter(IFriendRepository friendRepository, ISender sender)
         {
             _friendRepository = friendRepository;
             _sender = sender;

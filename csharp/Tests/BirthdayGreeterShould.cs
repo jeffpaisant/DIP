@@ -14,13 +14,13 @@ namespace Soat.CleanCoders.DipKata.Tests
     {
         private readonly BirthdayGreeter _birthdayGreeter;
         private readonly TextWriter _consoleOutput;
-        private readonly Mock<FriendRepository> _friendRepositoryMock;
+        private readonly Mock<IFriendRepository> _friendRepositoryMock;
 
         private string MailBuffer => _consoleOutput.ToString();
 
         public BirthdayGreeterShould()
         {
-            _friendRepositoryMock = new Mock<FriendRepository>();
+            _friendRepositoryMock = new Mock<IFriendRepository>();
             _birthdayGreeter = new BirthdayGreeter(_friendRepositoryMock.Object, new EmailSender());
             _consoleOutput = new StringWriter();
             Console.SetOut(_consoleOutput);
