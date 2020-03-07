@@ -9,10 +9,22 @@ namespace Soat.CleanCoders.DipKata.Repository
     {
         private ILoader _loader;
         private IEnumerable<Friend> _friends;
+        private string ExistingRepository() => "D:\\Repository\\DIP\\csharp\\Repository\\PhysicalRepository.json";
+
+        public FriendRepository()
+        {
+            LoadFromExisitingRepository();
+        }
 
         public FriendRepository(ILoader loader)
         {
             _loader = loader;
+        }
+
+        private void LoadFromExisitingRepository()
+        {
+            var physicalRepo = ExistingRepository();
+            _loader = LoaderFactory.GetLoader(physicalRepo);
         }
 
         public IEnumerable<Friend> FindFriendsBornOn(DateTime dayOfBirth)

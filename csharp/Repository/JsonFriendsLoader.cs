@@ -1,19 +1,24 @@
 ﻿using Newtonsoft.Json;
-using Soat.CleanCoders.DipKata.Repository;
 using System.Collections.Generic;
 using System.IO;
 
 namespace Soat.CleanCoders.DipKata.Repository
 {
-    public class FriendsLoader : ILoader
+    public class JsonFriendsLoader : ILoader
     {
-        IEnumerable<StoredFriend> _friends = new List<StoredFriend>();
+        private IEnumerable<StoredFriend> _friends = new List<StoredFriend>();
+        private string _fileName;
+
+        public JsonFriendsLoader(string fileName)
+        {
+            _fileName = fileName;
+        }
 
         public IEnumerable<StoredFriend> GetFriends() => _friends;
 
         public void Load()
         {
-            LoadFromJsonFile("D:\\Repository\\DIP\\csharp\\FriendRepository\\PhysicalRepository.json");
+            LoadFromJsonFile(_fileName);
         }
 
         private void LoadFromJsonFile(string fileName)
