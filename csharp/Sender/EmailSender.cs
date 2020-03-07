@@ -3,7 +3,7 @@ using System;
 
 namespace Soat.CleanCoders.DipKata.Sender
 {
-    public class EmailSender : Sender, ISender
+    public class EmailSender : ISender
     {
         private string _emailAddress;
 
@@ -17,7 +17,7 @@ namespace Soat.CleanCoders.DipKata.Sender
             Console.Write($"To:{emailAddress}, Subject: Happy birthday!, Message: {message}");
         }
 
-        public override void Send(Friend friend, string message)
+        public void Send(Friend friend, string message)
         {
             _emailAddress = friend.Email;
             Send(message);
