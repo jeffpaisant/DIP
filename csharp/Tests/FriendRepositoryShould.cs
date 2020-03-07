@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using Moq;
 using Soat.CleanCoders.DipKata.Repository;
+using Soat.CleanCoders.DipKata.Repository.LowLevelLoader;
 using System;
 using System.Collections.Generic;
 using System.Linq;

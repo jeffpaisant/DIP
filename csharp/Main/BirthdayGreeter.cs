@@ -1,5 +1,4 @@
-﻿using Soat.CleanCoders.DipKata.Repository;
-using Soat.CleanCoders.DipKata.Sender;
+﻿using Soat.CleanCoders.DipKata.Interfaces;
 using System;
 
 namespace Soat.CleanCoders.DipKata.Main

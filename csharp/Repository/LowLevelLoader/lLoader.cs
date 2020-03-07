@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Soat.CleanCoders.DipKata.Repository
+namespace Soat.CleanCoders.DipKata.Repository.LowLevelLoader
 {
     public interface ILoader
     {

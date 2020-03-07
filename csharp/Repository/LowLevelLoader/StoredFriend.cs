@@ -1,4 +1,4 @@
-﻿namespace Soat.CleanCoders.DipKata.Repository
+﻿namespace Soat.CleanCoders.DipKata.Repository.LowLevelLoader
 {
     public class StoredFriend
     {

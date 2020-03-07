@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Soat.CleanCoders.DipKata.Repository
+namespace Soat.CleanCoders.DipKata.Interfaces
 {
     public interface IFriendRepository
     {
