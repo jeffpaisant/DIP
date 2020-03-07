@@ -5,22 +5,14 @@ namespace Soat.CleanCoders.DipKata.Sender
 {
     public class EmailSender : ISender
     {
-        private string _emailAddress;
-
-        private void SendMail(string message)
-        {
-            Send(_emailAddress, message);
-        }
-
-        private void Send(string emailAddress, string message)
+        private void SendMail(string emailAddress, string message)
         {
             Console.Write($"To:{emailAddress}, Subject: Happy birthday!, Message: {message}");
         }
 
         public void Send(Friend friend, string message)
         {
-            _emailAddress = friend.Email;
-            SendMail(message);
+            SendMail(friend.Email,message);
         }
     }
 }
