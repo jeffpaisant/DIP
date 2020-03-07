@@ -2,9 +2,9 @@
 
 namespace Soat.CleanCoders.DipKata.Main
 {
-    public class EmailSender
+    public class EmailSender : ISender
     {
-        private string _emailAddress ;
+        private string _emailAddress;
 
         public void Send(string message)
         {
