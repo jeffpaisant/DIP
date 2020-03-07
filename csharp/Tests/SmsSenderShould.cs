@@ -31,6 +31,5 @@ namespace Soat.CleanCoders.DipKata.Tests
 
             SmsBuffer.Should().Be(expected);
         }
-
     }
 }
